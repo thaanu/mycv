@@ -86,7 +86,7 @@
             $output .= '<p><i class="fa-solid fa-server"></i> This project was hosted internally</p>';
         } else {
             if ( ! empty($data['website_url']) ) {
-                $output .= '<a href="'.$data['website_url'].'" class="link">Goto Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+                $output .= '<a href="'.$data['website_url'].'" target="_blank" class="link">Goto Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             }
         }
 
@@ -116,7 +116,7 @@
             $output .= '<p class="small-text-note"><i class="fa-solid fa-server"></i> This project was hosted internally</p>';
         } else {
             if ( ! empty($data['website_url']) ) {
-                $output .= '<a href="'.$data['website_url'].'" class="link">Goto Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+                $output .= '<a href="'.$data['website_url'].'" target="_blank" class="link">Goto Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             }
         }
 
