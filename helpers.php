@@ -212,6 +212,9 @@
 
     function validToken( $token ) {
         if ( file_exists(__DIR__ . "/tokens/$token") ) {
+            if ( tokenExpired($token) ) {
+                return false;
+            }
             return true;
         }
         return false;
@@ -222,8 +225,30 @@
         // Check for token
         if ( ! isset($_GET['token']) ) { error( 401 ); }
 
-        $token = $_GET['token'];
+        // Check if the token is expired
+        if ( ! validToken( $_GET['token'] ) ) { error(401); }
 
-        if ( ! validToken( $token ) ) { error(401); }
+    }
 
+    function tokenExpired( $token ) {
+        // Fetch the content
+        $content = file_get_contents(__DIR__ . "/tokens/$token");
+
+        // If there are no expiry time, return false
+        if ( empty($content) ) { return false; }
+
+        // Compare if the token is not expired
+        if ( date("Y-m-d H:i") > $content ) { return true; }
+
+        // By default the token is not expired
+        return false;
+    }
+
+    function getApacheHeaders() {
+        $output = [];
+        $headers = apache_request_headers();
+        foreach ( $headers as $key => $value ) {
+            $output[strtolower($key)] = $value;
+        }
+        return $output;
     }
