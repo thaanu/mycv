@@ -5,6 +5,8 @@
         exit;
     }
 
+    touch(__DIR__ . 'init');
+
     // Create folder for logs
     if ( ! is_dir(__DIR__ . '/logs') ) {
         mkdir(__DIR__.'/logs');
