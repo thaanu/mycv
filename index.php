@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $config['app_name'] ?></title>
     <meta id="xtoken" content="<?= $uid ?>">
+    <link rel="icon" type="image/jpg" href="https://pbs.twimg.com/profile_images/1616915938741465089/zfQFJP25_400x400.jpg">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="style.css?v=1">
 </head>
