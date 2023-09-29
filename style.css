@@ -224,7 +224,7 @@ nav ul li a:hover {
 /* Education Qualification */
 .edu-box {
     display: flex;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #999;
     padding: 20px 0;
 }
 
@@ -295,187 +295,114 @@ nav ul li a:hover {
 }
 
 /* Projects */
-.project-stack .project-box {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-}
-
-.project-stack .project-box .img {
-    min-height: 320px;
-    border-radius: 20px 20px 0 0;
-}
-
-.project-stack .project-box:hover .img {
-    opacity: 1;
-}
-
-.project-stack .project-box .info {
-    padding: 20px;
-}
-
-.project-stack .project-box .info h3 {
-    font-size: 20px;
-}
-
-.project-stack .project-box .info p {
-    margin: 20px 0;
-}
-
-.project-stack .project-box .info .tech {
-    list-style: none;
-    margin: 20px 0;
-}
-
-.project-stack .project-box .info .tech li {
-    padding: 5px;
-    display: inline;
-    border: 1px solid rgba(0,0,0,0.3);
-    margin-right: 5px;
-    border-radius: 5px;
-}
-
-.project-stack .project-box .info .link {
-    color: #fff;
-    background: rgb(22,219,30);
-    background: linear-gradient(28deg, rgba(22,219,30,1) 0%, rgba(0,194,200,1) 100%); 
-    background: -moz-linear-gradient(28deg, rgba(22,219,30,1) 0%, rgba(0,194,200,1) 100%);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.5s ease;
-    display: inline-block;
-}
-
-.project-stack .project-box .info .link:hover {
-    transform: scale(1.1);
-    color: #000;
-}
-
-.project-compact .compact {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.project-compact .compact a {
-    color: #000;
-    text-decoration: none;
-}
-
-.project-compact .compact .info {
+.project-hero {
     background: rgba(255,255,255,0.5);
     padding: 10px;
-    border-radius: 20px;
-}
-
-.project-compact .compact .info p {
-    font-size: 12px;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
-
-.project-compact .compact .info .tech {
-    list-style: none;
-    margin: 20px 0;
+.project-grid .project-box h2,
+.project-hero h2 {
+    margin-bottom: 0;
 }
-
-.project-compact .compact .info .tech li {
-    padding: 5px;
-    display: inline;
-    border: 1px solid rgba(0,0,0,0.3);
-    margin-right: 5px;
-    border-radius: 5px;
+.project-hero p {
+    padding: 10px 0;
+}
+.project-grid .project-box .img,
+.project-hero .img {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.project-hero .img {
+    height: 320px;
+}
+.project-grid .project-box .img {
+    height: 140px;
+}
+.project-grid .project-box .img img,
+.project-hero .img img {
+    width: 100%;
+}
+.project-grid .project-box .meta,
+.project-hero .meta {
     font-size: 12px;
+    padding: 10px 0;
 }
-
-.project-compact .compact .info .link {
-    color: #fff;
-    background: rgb(22,219,30);
-    background: linear-gradient(28deg, rgba(22,219,30,1) 0%, rgba(0,194,200,1) 100%); 
-    background: -moz-linear-gradient(28deg, rgba(22,219,30,1) 0%, rgba(0,194,200,1) 100%);
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: all 0.5s ease;
-    display: inline-block;
-    font-size: 12px;
+.project-grid .project-box .meta span,
+.project-hero .meta span {
+    margin-right: 10px;
 }
-
-.project-compact .compact .info .link:hover {
-    transform: scale(1.1);
-    color: #000;
+.project-grid {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
 }
-
-/* Project List */
-.project-list .project-box {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    border-radius: 20px;
-}
-
-.project-list .project-box div {
-    flex: 1;
+.project-grid .project-box {
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
     padding: 10px;
 }
-
-.project-list .project-box div:last-child {
-    text-align: right;
-}
-
-.small-text-note {
+.project-hero .badge,
+.project-grid .project-box .badge {
     font-size: 12px;
+    background: rgb(219,22,22);
+    background: linear-gradient(28deg, rgba(219,22,22,1) 0%, rgba(0,200,198,1) 100%); 
+    background: -moz-linear-gradient(28deg, rgba(219,22,22,1) 0%, rgba(0,200,198,1) 100%); 
+    color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    margin: 10px 0;
+    display: inline-block;
 }
-
-.project-list .project-box .link {
+.project-grid .project-box .tags,
+.project-hero .tags {
+    list-style: none;
+    padding: 10px 0;
+}
+.project-grid .project-box .tags li,
+.project-hero .tags li {
+    display: inline-block;
+    font-size: 12px;
+    border: 1px solid #999;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+@media screen and (min-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 960px) {
+    .project-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+.goto-btn {
     color: #fff;
     background: rgb(22,219,30);
     background: linear-gradient(28deg, rgba(22,219,30,1) 0%, rgba(0,194,200,1) 100%); 
     background: -moz-linear-gradient(28deg, rgba(22,219,30,1) 0%, rgba(0,194,200,1) 100%);
     text-decoration: none;
-    padding: 5px;
     border-radius: 40px;
     text-align: center;
     transition: all 0.5s ease;
     display: inline-block;
-    font-size: 12px;
-    width: 20px;
-    height: 20px;
     line-height: 20px;
+    margin: 10px 0;
 }
-
-.project-list .project-box .link:hover {
+.goto-btn:hover {
     transform: scale(1.1);
     color: #000;
 }
-
-@media screen and (min-width: 960px) {
-    .project-stack .project-box {
-        display: flex;
-    }
-
-    .project-stack .project-box .img {
-        opacity: 0.5;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .project-stack .project-box div {
-        flex: 1;
-    }
-    .project-stack .project-box .img {
-        border-radius: 20px 0 0 20px;
-    }
-    .project-compact {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .project-compact .compact {
-        width: 46%;
-        margin-right: 10px;
-    }
-    .project-list .project-box {
-        display: flex;
-    }
+.goto-btn-mini {
+    padding:10px;
+    width: 20px;
+    height: 20px;
+}
+.goto-btn-normal {
+    padding: 10px 15px;
 }
 
 /* Skills */
@@ -494,7 +421,7 @@ nav ul li a:hover {
     list-style-type: none;
     height: 20px;
     border-radius: 20px;
-    border: 1px solid #eee;
+    border: 1px solid #999;
     margin-bottom: 10px;
     padding: 10px 20px;
     position: relative;

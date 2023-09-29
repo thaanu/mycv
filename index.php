@@ -5,6 +5,7 @@
     $_SESSION['token'] = $uid; 
 
     include __DIR__ . '/helpers.php';
+    include __DIR__ . '/template.php';
 
     // Authorize User
     auth();

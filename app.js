@@ -58,10 +58,6 @@ hfPostRequest('ajax.php?action=work-experience').then(response => {
                         }
 
                     });
-
-                    // mibtns[i].style.display = 'none';
-                    // let t = e.target.dataset.target;
-                    // _e(`#${t}`).style.display = 'block';
                 });
             }
         }
@@ -95,7 +91,7 @@ hfPostRequest('ajax.php?action=skills').then(response => {
     }
 });
 
-// Skills
+// Projects
 hfPostRequest('ajax.php?action=projects').then(response => {
     if ( response.status == 200 ) {
         _e('#projects').innerHTML = response.content;

@@ -3,6 +3,7 @@
     $config = include __DIR__ . '/config.php';
     include __DIR__ . '/helpers.php';
     include __DIR__ . '/notion.php';
+    include __DIR__ . '/template.php';
 
     session_start();
 
@@ -124,34 +125,20 @@
 
             // Fetch all the projects
             $notionResponse = (new NotionInterface($config['notion']['projects_db_id'], $config['notion']['key']))->projects()->cleanup();
-            $abc = (new NotionInterface($config['notion']['projects_db_id'], $config['notion']['key']))->projects()->getResults();
 
-            logMessage($abc);
+            logMessage($notionResponse);
+            
+            // Hero Project
+            $content = projectHero($notionResponse[0]);
 
-            // Handle the first 3 projects
-            $content = '<div class="project-stack">';
-            for ( $i = 0; $i < 3; $i++ ) {
-                $content .= projectTag( $i, $notionResponse[$i] );
-            }
-            $content .= '</div>';
-
-            // Handle the next 4 projects
-            $content .= '<div class="project-compact">';
-            for ( $i = 3; $i < 7; $i++ ) {
-                $content .= projectCompactTag( $i, $notionResponse[$i] );
-            }
-            $content .= '</div>';
-
-            // Handle the rest of the projects
-            $content .= '<div class="project-list">';
-            for ( $i = 7; $i < count($notionResponse); $i++ ) {
+            // All other projects
+            $content .= '<div class="project-grid">';
+            for ( $i = 1; $i < count($notionResponse); $i++ ) {
                 $content .= projectList( $i, $notionResponse[$i] );
             }
             $content .= '</div>';
             
             $response['content'] = $content;
-
-            
 
         }
         
