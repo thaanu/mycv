@@ -144,3 +144,12 @@ async function hfPostRequest(url, dataset = {}) {
     const json = await response.json();
     return json;
 }
+
+let navBtns = document.querySelectorAll('.nav-link');
+for ( let i = 0; i < navBtns.length; i++ ) {
+    navBtns[i].addEventListener('click', function(e){
+        e.preventDefault();
+        let target = e.target.dataset.target;
+        _e(`#${target}`).scrollIntoView();
+    });
+}

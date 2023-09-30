@@ -82,7 +82,6 @@
     function projectHero( $data ) {
         $coverImage = ( empty($data['cover_photo']) ? '54aa419c436e3af8d3d6fad35c9e35dc0707.jpg' : $data['cover_photo'] );
         $output = '<div class="project-hero">';
-        $output .= '<div class="img"><img src="'.$coverImage.'" alt=""></div>';
         $output .= '<h2>'.$data['project_name'].'</h2>';
         $output .= '<div class="meta">';
         if ( ! empty($data['client_name']) ) {
@@ -90,6 +89,7 @@
         }
         $output .= '<span><i class="fa-solid fa-calendar-check"></i> '.$data['date'].'</span>';
         $output .= '</div>';
+        $output .= '<div class="img"><img src="'.$coverImage.'" alt=""></div>';
         $output .= '<p>'.$data['summary'].'</p>';
 
         if ( !empty($data['technologies']) ) {
@@ -105,7 +105,7 @@
             $output .= '<span class="badge"><i class="fa-solid fa-house-signal"></i> This project was hosted offline</span>';
         } else {
             if ( ! empty($data['website_url']) ) {
-                $output .= '<a href="'.$data['website_url'].'" target="_blank" class="goto-btn goto-btn-normal">Goto Project <i class="fa-solid fa-hand"></i></a>';
+                $output .= '<a href="'.$data['website_url'].'" target="_blank" class="goto-btn goto-btn-normal">Goto Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             }
         }
                 
@@ -117,7 +117,6 @@
     function projectList( $i, $data ) {
         $coverImage = ( empty($data['cover_photo']) ? '54aa419c436e3af8d3d6fad35c9e35dc0707.jpg' : $data['cover_photo'] );
         $output = '<div class="project-box">';
-        $output .= '<div class="img"><img src="'.$coverImage.'" alt=""></div>';
         $output .= '<h2>'.$data['project_name'].'</h2>';
         $output .= '<div class="meta">';
         if ( ! empty($data['client_name']) ) {
@@ -125,6 +124,7 @@
         }
         $output .= '<span><i class="fa-solid fa-calendar-check"></i> '.$data['date'].'</span>';
         $output .= '</div>';
+        $output .= '<div class="img"><img src="'.$coverImage.'" alt=""></div>';
         $output .= '<p>'.$data['summary'].'</p>';
 
         if ( !empty($data['technologies']) ) {
@@ -140,7 +140,7 @@
             $output .= '<span class="badge"><i class="fa-solid fa-house-signal"></i> This project was hosted offline</span>';
         } else {
             if ( ! empty($data['website_url']) ) {
-                $output .= '<a href="'.$data['website_url'].'" target="_blank" class="goto-btn goto-btn-normal">Goto Project <i class="fa-solid fa-hand"></i></a>';
+                $output .= '<a href="'.$data['website_url'].'" target="_blank" class="goto-btn goto-btn-normal">Goto Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             }
         }
         $output .= '</div>';

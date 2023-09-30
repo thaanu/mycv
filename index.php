@@ -45,11 +45,11 @@
     <nav>
         <div class="section">
             <ul>
-                <li><a href="#">Languages</a></li>
-                <li><a href="#">Academic</a></li>
-                <li><a href="#">Employment</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Skills</a></li>
+                <li><a href="#" data-target="languages" class="nav-link">Languages</a></li>
+                <li><a href="#" data-target="skills" class="nav-link">Skills</a></li>
+                <li><a href="#" data-target="academic" class="nav-link">Academic</a></li>
+                <li><a href="#" data-target="employment" class="nav-link">Employment</a></li>
+                <li><a href="#" data-target="projects" class="nav-link">Projects</a></li>
             </ul>
         </div>
     </nav>
