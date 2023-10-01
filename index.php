@@ -29,7 +29,7 @@
     <div class="bio">
         <div class="section">
             <div id="profile-photo">
-                <img src="https://pbs.twimg.com/profile_images/1616915938741465089/zfQFJP25_400x400.jpg" alt="myself">
+                <img id="profile-photo-img" src="" alt="myself">
             </div>
             <h1 class="mb-1" id="bio-name"><span class="placeholder"></span></h1>
             <p class="mb-1" id="bio-dob"><span class="placeholder"></span></p>
@@ -48,11 +48,18 @@
                 <li><a href="#" data-target="languages" class="nav-link">Languages</a></li>
                 <li><a href="#" data-target="skills" class="nav-link">Skills</a></li>
                 <li><a href="#" data-target="academic" class="nav-link">Academic</a></li>
-                <li><a href="#" data-target="employment" class="nav-link">Employment</a></li>
+                <li><a href="#" data-target="work-experiences" class="nav-link">Employment</a></li>
                 <li><a href="#" data-target="projects" class="nav-link">Projects</a></li>
             </ul>
         </div>
     </nav>
+
+    <div class="contact sub-section">
+        <div class="section">
+            <h2><i class="fa-solid fa-magnifying-glass"></i> Find Me</h2>
+            <div id="contact"><i class="fa-solid fa-spin fa-spinner"></i> Loading...</div>
+        </div>
+    </div>
 
     <div class="language sub-section">
         <div class="section">

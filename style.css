@@ -117,6 +117,23 @@ nav ul li a:hover {
     border: 1px solid #000;
 }
 
+.social-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.social-media div {
+    text-align: center;
+}
+
+.social-media div a {
+    font-size: 2rem;
+    color: #999;
+}
+.social-media div a:hover {
+    color: rgba(0,200,198,1);
+}
+
 .mb-1 { margin-bottom: 10px; }
 .mb-2 { margin-bottom: 20px; }
 

@@ -158,9 +158,14 @@
             'html5' => '<i class="fa-brands fa-html5"></i>',
             'css' => '<i class="fa-brands fa-css3-alt"></i>',
             'css3' => '<i class="fa-brands fa-css3-alt"></i>',
-            'wordpress' => '<i class="fa-brands fa-wordpress"></i>'
+            'wordpress' => '<i class="fa-brands fa-wordpress"></i>',
+            'linkedin' => '<i class="fa-brands fa-linkedin"></i>',
+            'twitter' => '<i class="fa-brands fa-twitter"></i>',
+            'instagram' => '<i class="fa-brands fa-instagram"></i>',
+            'git_hub' => '<i class="fa-brands fa-github"></i>'
         ];
         $tag = strtolower($tag);
+        $tag = str_replace(' ', '_', $tag);
         if ( array_key_exists($tag, $icons) ) { return $icons[$tag]; }
         $icon = $default;
         return $icon;

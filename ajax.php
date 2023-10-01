@@ -115,6 +115,13 @@
             $bio['dob_n_age'] = date('d F Y', strtotime($bio['dob'])) . " ($age yrs)";
             $bio['website_link'] = '<a href="'.$bio['website']['link'].'" target="_blank" >'.$bio['website']['title'].'</a>';
             $bio['last_updated_date_formatted'] = date('d F Y', strtotime($bio['last_updated_date']));
+            
+            $socialMedia = [];
+            foreach ( $bio['social_media'] as $i => $sm ) {
+                $socialMedia[$i] = $sm;
+                $socialMedia[$i]['icon'] = getIcon($sm['name']);
+            }
+            $bio['social_media'] = $socialMedia;
 
             $response['content'] = $bio;
 

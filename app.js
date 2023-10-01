@@ -2,6 +2,7 @@
 hfPostRequest('ajax.php?action=bio').then(response => {
     if ( response.status == 200 ) {
         let bio = response.content;
+        _e('#profile-photo-img').setAttribute('src', bio.profile_photo);
         _e('#bio-name').innerHTML = bio.name;
         _e('#bio-email').innerHTML = bio.email;
         _e('#bio-phone').innerHTML = bio.phone;
@@ -13,6 +14,15 @@ hfPostRequest('ajax.php?action=bio').then(response => {
         for ( let i = 0; i < bio.languages.length; i++ ) { l += `<li>${bio.languages[i]}</li>`; }
         l += `</ul>`;
         _e('#languages').innerHTML = l;
+
+        console.log(bio.social_media);
+
+        let c = `<div class="social-media">`;
+        for ( let i = 0; i < bio.social_media.length; i++ ) { 
+            c += `<div><a href="${bio.social_media[i].url}" title="${bio.social_media[i].name}" target="_blank">${bio.social_media[i].icon}</a></div>`; 
+        }
+        c += `</div>`;
+        _e('#contact').innerHTML = c;
 
     } else if ( response.status == 404 ) {
         showNotification( response.message, 'warning' );
@@ -144,6 +154,7 @@ async function hfPostRequest(url, dataset = {}) {
     const json = await response.json();
     return json;
 }
+
 
 let navBtns = document.querySelectorAll('.nav-link');
 for ( let i = 0; i < navBtns.length; i++ ) {
